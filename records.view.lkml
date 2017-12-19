@@ -11,6 +11,11 @@ view: records {
     sql: ${TABLE}.ActiveStatus ;;
   }
 
+  dimension: age {
+    type: number
+    sql: DATEDIFF(DAY, ${TABLE}.DateTimeCreated, GETDATE()) ;;
+  }
+
   dimension: allow_purge {
     type: string
     sql: ${TABLE}.AllowPurge ;;
