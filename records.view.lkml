@@ -13,7 +13,7 @@ view: records {
 
   dimension: age {
     type: tier
-    tiers: [0,3,7,15]
+    tiers: [3,7,15]
     style: integer
     sql: DATEDIFF(DAY, ${TABLE}.DateTimeCreated, GETDATE()) ;;
   }
