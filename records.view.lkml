@@ -18,7 +18,7 @@ view: records {
 
   dimension: assigned_to {
     type: string
-    sql: ${TABLE}.AssignedTo ;;
+    sql: isnull(substring(${TABLE}.AssignedTo,charindex('.',${TABLE}.AssignedTo)+1,200),'Unassigned');;
   }
 
   dimension: bloomberg_id {
@@ -41,8 +41,10 @@ view: records {
     sql: ${TABLE}.CUSIP ;;
   }
 
-  dimension: date_time_created {
-    type: string
+  dimension_group: date_time_created {
+    type: time
+    timeframes: [date, week, month, time]
+    convert_tz: no
     sql: ${TABLE}.DateTimeCreated ;;
   }
 
@@ -121,6 +123,11 @@ view: records {
     sql: ${TABLE}.LatestComment ;;
   }
 
+  dimension: match_status {
+    type: string
+    sql: case ${TABLE}.ActiveStatus when 0 then 'Unmatched' when 1 then 'Matched' end;;
+  }
+
   dimension: op_type {
     type: string
     sql: ${TABLE}.OpType ;;
@@ -194,5 +201,16 @@ view: records {
   measure: count {
     type: count
     drill_fields: []
+  }
+
+  measure: count_percent {
+    type: percent_of_total
+    sql: ${count};;
+  }
+
+  measure: sum_quantity {
+    type: sum
+    sql: ${quantity};;
+    value_format: "#,##0.00"
   }
 }
