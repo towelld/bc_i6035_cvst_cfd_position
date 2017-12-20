@@ -186,3 +186,41 @@
               __FILE: i6035_cvst_cfd_position/i6045_position_summary.dashboard.lookml,
               __LINE_NUM: 81}], __FILE: i6035_cvst_cfd_position/i6045_position_summary.dashboard.lookml,
           __LINE_NUM: 77}]
+
+
+    - name: break_value_by_age_table
+      title: Detail
+      model: bc_i6035_cvst_cfd_position
+      explore: records
+      type: table
+      left: 12
+      top: 3
+      height: 6
+      width: 12
+      fields: [records.facing_pb, records.age, records.sum_settle_amt_usd]
+      pivots: [records.age]
+      fill_fields: [records.age]
+      filters:
+        records.system: Calypso
+        records.match_status: Unmatched
+      listen:
+        facing_pb: records.facing_pb
+      sorts: [records.facing_pb, records.age]
+      limit: 500
+      total: true
+      show_view_names: false
+      show_row_numbers: false
+      truncate_column_names: false
+      hide_totals: false
+      hide_row_totals: false
+      table_theme: gray
+      limit_displayed_rows: false
+      enable_conditional_formatting: false
+      conditional_formatting_ignored_fields: []
+      conditional_formatting_include_totals: false
+      conditional_formatting_include_nulls: false
+      series_types: {}
+      series_labels:
+        records.facing_pb: Account/PB
+        records.count: Value (USD)
+        records.age: Age
