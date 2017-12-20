@@ -83,7 +83,7 @@
 
 
     - name: break_count_by_age_table
-      title: Break Count by Account by Age
+      title: Detail
       model: bc_i6035_cvst_cfd_position
       explore: records
       type: table
