@@ -33,6 +33,7 @@
       fill_fields: [records.age]
       filters:
         records.system: Calypso
+        records.match_status: Unmatched
       listen:
         facing_pb: records.facing_pb
       sorts: [records.count desc 0, records.age]
@@ -80,6 +81,7 @@
             {id: 8 to 15, name: 8 to 15, axisId: records.count}, {id: 16 or Above, name: 16
                 or Above, axisId: records.count}]}]
 
+
     - name: break_count_by_age_table
       title: Break Count by Account by Age
       model: bc_i6035_cvst_cfd_position
@@ -94,6 +96,7 @@
       fill_fields: [records.age]
       filters:
         records.system: Calypso
+        records.match_status: Unmatched
       listen:
         facing_pb: records.facing_pb
       sorts: [records.facing_pb, records.age]
