@@ -27,7 +27,7 @@
       left: 0
       top: 0
       height: 3
-      width: 12
+      width: 11
       fields: [records.count, records.system, records.age]
       pivots: [records.age]
       fill_fields: [records.age]
@@ -90,7 +90,7 @@
       left: 0
       top: 3
       height: 6
-      width: 12
+      width: 11
       fields: [records.facing_pb, records.age, records.count]
       pivots: [records.age]
       fill_fields: [records.age]
@@ -128,7 +128,7 @@
       left: 12
       top: 0
       height: 3
-      width: 12
+      width: 11
       fields: [records.system, records.age, records.sum_settle_amt_usd]
       pivots: [records.age]
       fill_fields: [records.age]
@@ -196,7 +196,7 @@
       left: 12
       top: 3
       height: 6
-      width: 12
+      width: 11
       fields: [records.facing_pb, records.age, records.sum_settle_amt_usd]
       pivots: [records.age]
       fill_fields: [records.age]
@@ -222,5 +222,5 @@
       series_types: {}
       series_labels:
         records.facing_pb: Account/PB
-        records.count: Value (USD)
+        records.sum_settle_amt_usd: Value (USD)
         records.age: Age
