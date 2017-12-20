@@ -63,6 +63,7 @@ view: records {
   dimension: facing_pb {
     type: string
     sql: ${TABLE}.FacingPB ;;
+    drill_fields: [position_record*]
   }
 
   dimension: fund {
@@ -120,8 +121,10 @@ view: records {
     sql: ${TABLE}.LastActionType ;;
   }
 
-  dimension: last_updated {
-    type: string
+  dimension_group: last_updated {
+    type: time
+    timeframes: [date, week, month, time]
+    convert_tz: no
     sql: ${TABLE}.LastUpdated ;;
   }
 
@@ -246,4 +249,18 @@ view: records {
     value_format: "$#,##0.00"
   }
 
+  set: position_record {
+    fields: [
+      date_time_created_date,
+      last_updated_date,
+      age,
+      facing_pb,
+      isin,
+      acc_code,
+      settle_price,
+      sccy,
+      quantity,
+      settle_amt_usd
+    ]
+  }
 }
