@@ -26,7 +26,7 @@
       type: looker_column
       left: 0
       top: 0
-      height: 4
+      height: 3
       width: 12
       fields: [records.count, records.system, records.age]
       pivots: [records.age]
@@ -86,9 +86,9 @@
       explore: records
       type: table
       left: 0
-      top: 4
-      height: 4
-      width: 14
+      top: 3
+      height: 6
+      width: 12
       fields: [records.facing_pb, records.age, records.count]
       pivots: [records.age]
       fill_fields: [records.age]
