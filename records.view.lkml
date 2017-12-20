@@ -243,7 +243,7 @@ view: records {
   measure: sum_settle_amt_usd {
     type: sum
     sql: ${settle_amt_usd};;
-    value_format: "$#.00;($#.00)"
+    value_format: "$#,##0.00"
   }
 
 }
