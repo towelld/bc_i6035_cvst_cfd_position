@@ -63,7 +63,6 @@ view: records {
   dimension: facing_pb {
     type: string
     sql: ${TABLE}.FacingPB ;;
-    drill_fields: [position_record*]
   }
 
   dimension: fund {
@@ -224,29 +223,34 @@ view: records {
 
   measure: count {
     type: count
-    drill_fields: []
+    drill_fields: [position_record*]
   }
 
   measure: count_percent {
     type: percent_of_total
     sql: ${count};;
+    drill_fields: [position_record*]
   }
 
   measure: sum_quantity {
     type: sum
     sql: ${quantity};;
     value_format: "#,##0.00"
+    drill_fields: [position_record*]
   }
+
   measure: sum_settle_amt {
     type: sum
     sql: ${settle_amt};;
     value_format: "#,##0.00"
+    drill_fields: [position_record*]
   }
 
   measure: sum_settle_amt_usd {
     type: sum
     sql: ${settle_amt_usd};;
     value_format: "$#,##0.00"
+    drill_fields: [position_record*]
   }
 
   set: position_record {
