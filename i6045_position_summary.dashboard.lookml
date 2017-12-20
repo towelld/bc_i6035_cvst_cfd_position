@@ -79,3 +79,39 @@
                 4, name: Below 4, axisId: records.count}, {id: 4 to 7, name: 4 to 7, axisId: records.count},
             {id: 8 to 15, name: 8 to 15, axisId: records.count}, {id: 16 or Above, name: 16
                 or Above, axisId: records.count}]}]
+
+    - name: break_count_by_age_table
+      title: Break Count by Account by Age
+      model: bc_i6035_cvst_cfd_position
+      explore: records
+      type: table
+      left: 0
+      top: 4
+      height: 4
+      width: 12
+      fields: [records.facing_pb, records.age, records.count]
+      pivots: [records.age]
+      fill_fields: [records.age]
+      filters:
+        records.system: Calypso
+      listen:
+        facing_pb: records.facing_pb
+      sorts: [records.facing_pb, records.age]
+      limit: 500
+      total: true
+      show_view_names: false
+      show_row_numbers: false
+      truncate_column_names: false
+      hide_totals: false
+      hide_row_totals: false
+      table_theme: gray
+      limit_displayed_rows: false
+      enable_conditional_formatting: false
+      conditional_formatting_ignored_fields: []
+      conditional_formatting_include_totals: false
+      conditional_formatting_include_nulls: false
+      series_types: {}
+      series_labels:
+        records.facing_pb: Account/PB
+        records.count: Count
+        records.age: Age
