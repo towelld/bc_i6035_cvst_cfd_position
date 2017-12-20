@@ -175,6 +175,20 @@ view: records {
     sql: ${TABLE}.SEDOL ;;
   }
 
+  dimension: settle_amt {
+    type: number
+    sql: ${TABLE}.SettleAmtMoney ;;
+  }
+
+  dimension: settle_amt_usd {
+    type: number
+    sql: ${TABLE}.SettleAmtUsd ;;
+  }
+
+  dimension: settle_price {
+    type: number
+    sql: ${TABLE}.SettlePrice ;;
+  }
   dimension: sl {
     type: string
     sql: ${TABLE}.SL ;;
@@ -220,4 +234,16 @@ view: records {
     sql: ${quantity};;
     value_format: "#,##0.00"
   }
+  measure: sum_settle_amt {
+    type: sum
+    sql: ${settle_amt};;
+    value_format: "#,##0.00"
+  }
+
+  measure: sum_settle_amt_usd {
+    type: sum
+    sql: ${settle_amt_usd};;
+    value_format: "#,##0.00"
+  }
+
 }
