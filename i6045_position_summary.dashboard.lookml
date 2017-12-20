@@ -88,7 +88,7 @@
       left: 0
       top: 4
       height: 4
-      width: 12
+      width: 14
       fields: [records.facing_pb, records.age, records.count]
       pivots: [records.age]
       fill_fields: [records.age]
