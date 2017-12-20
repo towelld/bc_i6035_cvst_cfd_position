@@ -53,6 +53,7 @@ view: records {
     timeframes: [date, week, month, time]
     convert_tz: no
     sql: ${TABLE}.DateTimeCreated ;;
+    view_label: "Date Created"
   }
 
   dimension: do_not_purge_before {
@@ -63,6 +64,7 @@ view: records {
   dimension: facing_pb {
     type: string
     sql: ${TABLE}.FacingPB ;;
+    view_label: "Account/PB"
   }
 
   dimension: fund {
@@ -125,6 +127,7 @@ view: records {
     timeframes: [date, week, month, time]
     convert_tz: no
     sql: ${TABLE}.LastUpdated ;;
+    view_label: "Date Updated"
   }
 
   dimension: latest_comment {
@@ -165,6 +168,7 @@ view: records {
   dimension: quantity {
     type: number
     sql: ${TABLE}.Quantity ;;
+    value_format: "#,##0.00"
   }
 
   dimension: sccy {
@@ -180,17 +184,23 @@ view: records {
   dimension: settle_amt {
     type: number
     sql: ${TABLE}.SettleAmtMoney ;;
+    view_label: "Settle Amount"
+    value_format: "#,##0.00"
   }
 
   dimension: settle_amt_usd {
     type: number
     sql: ${TABLE}.SettleAmtUsd ;;
+    view_label: "Settle Amount (USD)"
+    value_format: "#,##0.00"
   }
 
   dimension: settle_price {
     type: number
     sql: ${TABLE}.SettlePrice ;;
+    value_format: "#,##0.00"
   }
+
   dimension: sl {
     type: string
     sql: ${TABLE}.SL ;;
@@ -243,6 +253,7 @@ view: records {
     type: sum
     sql: ${settle_amt};;
     value_format: "#,##0.00"
+    view_label: "Settle Amount"
     drill_fields: [position_record*]
   }
 
@@ -250,6 +261,7 @@ view: records {
     type: sum
     sql: ${settle_amt_usd};;
     value_format: "$#,##0.00"
+    view_label: "Settle Amount (USD)"
     drill_fields: [position_record*]
   }
 
@@ -259,11 +271,12 @@ view: records {
       last_updated_date,
       age,
       facing_pb,
-      isin,
       acc_code,
+      isin,
+      quantity,
       settle_price,
       sccy,
-      quantity,
+      settle_amt,
       settle_amt_usd
     ]
   }
