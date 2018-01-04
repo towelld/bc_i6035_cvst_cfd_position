@@ -233,7 +233,7 @@
       left: 0
       top: 8
       height: 6
-      width: 24
+      width: 23
       fields: [records.facing_pb, records.count, records.sum_settle_amt_usd, records.age]
       pivots: [records.age]
       fill_fields: [records.age]
