@@ -231,7 +231,7 @@
       explore: records
       type: table
       left: 0
-      top: 10
+      top: 8
       height: 6
       width: 24
       fields: [records.facing_pb, records.count, records.sum_settle_amt_usd, records.age]
