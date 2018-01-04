@@ -96,10 +96,21 @@ view: match_jobs {
     value_format: "#,##0.00"
   }
 
+  measure: average_unmatched {
+    type: average
+    sql: ${number_of_unmatched_records};;
+    value_format: "#,##0.00"
+  }
+
   measure: sum_matched {
     type: sum
     sql: ${number_of_matched_records};;
     value_format: "#,##0.00"
   }
 
+  measure: average_matched {
+    type: average
+    sql: ${number_of_matched_records};;
+    value_format: "#,##0.00"
+  }
 }
