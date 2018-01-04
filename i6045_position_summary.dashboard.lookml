@@ -269,7 +269,7 @@
       explore: match_jobs
       type: looker_area
       left: 0
-      top: 12
+      top: 13
       height: 3
       width: 23
       fields: [match_jobs.date_time_stamp_date, match_jobs.average_unmatched]
