@@ -118,6 +118,11 @@
         records.facing_pb: Account/PB
         records.count: Count
         records.age: Age
+      conditional_formatting: [{type: greater than, value: 1000,      background_color: "#df5555", font_color: "#000000", bold: false, italic: false, strikethrough: false},
+                               {type: greater than, value:  300,      background_color: "#eaa153", font_color: "#000000", bold: false, italic: false, strikethrough: false},
+                               {type: greater than, value:    0,      background_color: "#92c26e", font_color: "#000000", bold: false, italic: false, strikethrough: false},
+                               {type: 'null',       value: !!null '', background_color: "#92c26e", font_color: "#000000", bold: false, italic: false, strikethrough: false},
+                              ]
 
 
     - name: break_value_by_age_chart
