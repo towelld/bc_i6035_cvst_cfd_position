@@ -311,5 +311,5 @@
           type: linear, unpinAxis: false, valueFormat: !!null '', series: [{id: match_jobs.average_unmatched,
               name: Average Unmatched, axisId: match_jobs.average_unmatched}]}]
       series_colors:
-        match_jobs.average_unmatched: "#646569"
+        match_jobs.average_unmatched: "#073C68"
       x_padding_left: 20
