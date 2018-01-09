@@ -262,6 +262,16 @@
         records.count: Count
         records.sum_settle_amt_usd: Value (USD)
         records.age: Age
+      enable_conditional_formatting: true
+      conditional_formatting_ignored_fields: [records.count]
+      conditional_formatting_include_totals: true
+      conditional_formatting_include_nulls: true
+      conditional_formatting: [{type: not null, value: !!null '', background_color: "#d1d1d5",
+          font_color: !!null '', palette: {name: Red to White, colors: ["#F36254", "#FFFFFF"]},
+          bold: false, italic: false, strikethrough: false}, {type: 'null', value: !!null '',
+          background_color: "#d1d1d5", font_color: !!null '', palette: {name: Red to Yellow
+            to Green, colors: ["#F36254", "#FCF758", "#4FBC89"]}, bold: false, italic: false,
+          strikethrough: false}]
 
 
     - name: automatch_count_last_7_days
