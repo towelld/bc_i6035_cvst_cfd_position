@@ -263,56 +263,6 @@
         records.sum_settle_amt_usd: Value (USD)
         records.age: Age
 
-    - name: unmatch_count_last_28_days
-      title: Unmatched Count - Last 28 Days
-      model: bc_i6035_cvst_cfd_position
-      explore: match_jobs
-      type: looker_area
-      left: 0
-      top: 13
-      height: 3
-      width: 23
-      fields: [match_jobs.date_time_stamp_date, match_jobs.average_unmatched]
-      filters:
-        match_jobs.date_time_stamp_date: 28 days
-      sorts: [match_jobs.date_time_stamp_date]
-      limit: 500
-      stacking: ''
-      show_value_labels: true
-      label_density: 25
-      legend_position: center
-      x_axis_gridlines: false
-      y_axis_gridlines: true
-      show_view_names: false
-      limit_displayed_rows: false
-      y_axis_combined: true
-      show_y_axis_labels: true
-      show_y_axis_ticks: true
-      y_axis_tick_density: default
-      y_axis_tick_density_custom: 5
-      show_x_axis_label: false
-      show_x_axis_ticks: true
-      x_axis_scale: auto
-      y_axis_scale_mode: linear
-      show_null_points: false
-      point_style: circle_outline
-      interpolation: linear
-      show_totals_labels: false
-      show_silhouette: false
-      totals_color: "#808080"
-      ordering: none
-      show_null_labels: false
-      column_spacing_ratio:
-      column_group_spacing_ratio:
-      hide_legend: false
-      series_types: {}
-      y_axes: [{label: '', maxValue: !!null '', minValue: !!null '', orientation: left,
-          showLabels: false, showValues: true, tickDensity: default, tickDensityCustom: 5,
-          type: linear, unpinAxis: false, valueFormat: !!null '', series: [{id: match_jobs.average_unmatched,
-              name: Average Unmatched, axisId: match_jobs.average_unmatched}]}]
-      series_colors:
-        match_jobs.average_unmatched: "#073C68"
-      x_padding_left: 20
 
     - name: automatch_count_last_7_days
       title: Auto Matched Count - Last 7 Days
@@ -320,7 +270,7 @@
       explore: match_jobs
       type: looker_column
       left: 0
-      top: 16
+      top: 13
       height: 6
       width: 7
       fields: [match_jobs.date_time_stamp_date, match_jobs.sum_matched]
@@ -364,7 +314,7 @@
       explore: user_audit
       type: looker_column
       left: 8
-      top: 16
+      top: 13
       height: 6
       width: 7
       fields: [user_session_audit.full_user_name, user_audit.date_time_stamp_date, user_audit.count]
@@ -421,7 +371,7 @@
       explore: match_jobs
       type: looker_area
       left: 16
-      top: 16
+      top: 13
       height: 6
       width: 7
       fields: [match_jobs.date_time_stamp_date, match_jobs.average_unmatched]
