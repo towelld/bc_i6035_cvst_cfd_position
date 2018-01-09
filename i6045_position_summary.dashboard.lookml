@@ -313,3 +313,155 @@
       series_colors:
         match_jobs.average_unmatched: "#073C68"
       x_padding_left: 20
+
+    - name: automatch_count_last_7_days
+      title: Auto Matched Count - Last 7 Days
+      model: bc_i6035_cvst_cfd_position
+      explore: match_jobs
+      type: looker_column
+      left: 0
+      top: 16
+      height: 6
+      width: 7
+      fields: [match_jobs.date_time_stamp_date, match_jobs.sum_matched]
+      fill_fields: [match_jobs.date_time_stamp_date]
+      filters:
+        match_jobs.date_time_stamp_date: 7 days
+      sorts: [match_jobs.date_time_stamp_date desc]
+      limit: 500
+      stacking: ''
+      show_value_labels: false
+      label_density: 25
+      legend_position: center
+      x_axis_gridlines: false
+      y_axis_gridlines: true
+      show_view_names: true
+      limit_displayed_rows: false
+      y_axis_combined: true
+      show_y_axis_labels: true
+      show_y_axis_ticks: true
+      y_axis_tick_density: default
+      y_axis_tick_density_custom: 5
+      show_x_axis_label: false
+      show_x_axis_ticks: true
+      x_axis_scale: auto
+      y_axis_scale_mode: linear
+      ordering: none
+      show_null_labels: false
+      show_totals_labels: false
+      show_silhouette: false
+      totals_color: "#808080"
+      series_colors:
+        match_jobs.sum_matched: "#073C68"
+      y_axes: [{label: '', maxValue: !!null '', minValue: !!null '', orientation: left,
+          showLabels: false, showValues: true, tickDensity: default, tickDensityCustom: 5,
+          type: linear, unpinAxis: false, valueFormat: !!null '', series: [{id: match_jobs.sum_matched,
+              name: Match Jobs Sum Matched, axisId: match_jobs.sum_matched}]}]
+
+    - name: manualmatch_count_last_7_days
+      title: Manual Matched Count - Last 7 Days
+      model: bc_i6035_cvst_cfd_position
+      explore: user_audit
+      type: looker_column
+      left: 8
+      top: 16
+      height: 6
+      width: 7
+      fields: [user_session_audit.full_user_name, user_audit.date_time_stamp_date, user_audit.count]
+      pivots: [user_session_audit.full_user_name]
+      fill_fields: [user_audit.date_time_stamp_date]
+      filters:
+        user_audit.action: Accept,Match
+        user_audit.date_time_stamp_date: 7 days
+      sorts: [user_audit.date_time_stamp_date desc, user_audit.count desc 0, user_session_audit.full_user_name]
+      limit: 500
+      stacking: normal
+      show_value_labels: false
+      label_density: 25
+      legend_position: center
+      x_axis_gridlines: false
+      y_axis_gridlines: true
+      show_view_names: true
+      limit_displayed_rows: false
+      y_axis_combined: true
+      show_y_axis_labels: true
+      show_y_axis_ticks: true
+      y_axis_tick_density: default
+      y_axis_tick_density_custom: 5
+      show_x_axis_label: false
+      show_x_axis_ticks: true
+      x_axis_scale: auto
+      y_axis_scale_mode: linear
+      ordering: none
+      show_null_labels: false
+      show_totals_labels: false
+      show_silhouette: false
+      totals_color: "#808080"
+      show_row_numbers: true
+      truncate_column_names: false
+      hide_totals: false
+      hide_row_totals: false
+      table_theme: editable
+      enable_conditional_formatting: false
+      conditional_formatting_ignored_fields: []
+      conditional_formatting_include_totals: false
+      conditional_formatting_include_nulls: false
+      series_types: {}
+      hide_legend: false
+      y_axes: [{label: '', maxValue: !!null '', minValue: !!null '', orientation: left,
+          showLabels: false, showValues: true, tickDensity: default, tickDensityCustom: 5,
+          type: linear, unpinAxis: false, valueFormat: "#,##0", series: [{id: Brett, name: Brett,
+              axisId: user_audit.count}, {id: Dai, name: Dai, axisId: user_audit.count},
+            {id: Spencer, name: Spencer, axisId: user_audit.count}, {id: Yogesh, name: Yogesh,
+              axisId: user_audit.count}]}]
+
+    - name: unmatch_count_last_7_days
+      title: Unmatched Count - Last 7 Days
+      model: bc_i6035_cvst_cfd_position
+      explore: match_jobs
+      type: looker_area
+      left: 16
+      top: 16
+      height: 6
+      width: 7
+      fields: [match_jobs.date_time_stamp_date, match_jobs.average_unmatched]
+      filters:
+        match_jobs.date_time_stamp_date: 7 days
+      sorts: [match_jobs.date_time_stamp_date]
+      limit: 500
+      stacking: ''
+      show_value_labels: true
+      label_density: 25
+      legend_position: center
+      x_axis_gridlines: false
+      y_axis_gridlines: true
+      show_view_names: false
+      limit_displayed_rows: false
+      y_axis_combined: true
+      show_y_axis_labels: true
+      show_y_axis_ticks: true
+      y_axis_tick_density: default
+      y_axis_tick_density_custom: 5
+      show_x_axis_label: false
+      show_x_axis_ticks: true
+      x_axis_scale: auto
+      y_axis_scale_mode: linear
+      show_null_points: false
+      point_style: circle_outline
+      interpolation: linear
+      show_totals_labels: false
+      show_silhouette: false
+      totals_color: "#808080"
+      ordering: none
+      show_null_labels: false
+      column_spacing_ratio:
+      column_group_spacing_ratio:
+      hide_legend: false
+      series_types: {}
+      y_axes: [{label: '', maxValue: !!null '', minValue: !!null '', orientation: left,
+          showLabels: false, showValues: true, tickDensity: default, tickDensityCustom: 5,
+          type: linear, unpinAxis: false, valueFormat: !!null '', series: [{id: match_jobs.average_unmatched,
+              name: Average Unmatched, axisId: match_jobs.average_unmatched}]}]
+      series_colors:
+        match_jobs.average_unmatched: "#073C68"
+      x_padding_left: 20

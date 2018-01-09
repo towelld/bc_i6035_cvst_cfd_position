@@ -55,4 +55,11 @@ explore: records {
   persist_for: "5 minutes"
 }
 
-explore: user_audit {}
+explore: user_audit{
+  persist_for: "5 minutes"
+  join: user_session_audit {
+    type: inner
+    sql_on: ${user_session_audit.session_id} = ${user_audit.session_id} ;;
+    relationship: one_to_one
+  }
+}
