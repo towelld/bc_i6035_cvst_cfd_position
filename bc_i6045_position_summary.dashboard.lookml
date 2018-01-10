@@ -32,6 +32,7 @@
       fields: [records.system, records.match_status, records.count]
       pivots: [records.match_status]
       filters:
+        records.match_status: Matched,Unmatched
         records.system: "-Calypso"
       sorts: [records.count desc 0, records.match_status]
       limit: 500
@@ -82,6 +83,7 @@
       width: 6
       fields: [records.match_status, records.count_percent]
       filters:
+        records.match_status: Matched,Unmatched
         records.system: "-Calypso"
       sorts: [records.count_percent desc]
       limit: 500
