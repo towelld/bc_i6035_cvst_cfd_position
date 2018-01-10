@@ -171,7 +171,7 @@
       filters:
         records.match_status: Unmatched
         records.system: "-Calypso"
-      sorts: [records.count_percent desc]
+      sorts: [records.system]
       limit: 500
       value_labels: legend
       label_type: labPer
