@@ -28,7 +28,7 @@
       left: 0
       top: 0
       height: 4
-      width: 6
+      width: 8
       fields: [records.facing_pb, records.match_status, records.count]
       pivots: [records.match_status]
       filters:
@@ -79,10 +79,10 @@
       model: bc_i6035_cvst_cfd_position
       explore: records
       type: looker_pie
-      left: 6
+      left: 8
       top: 0
       height: 4
-      width: 6
+      width: 4
       fields: [records.match_status, records.count_percent]
       filters:
         records.match_status: Matched,Unmatched
@@ -91,7 +91,7 @@
         facing_pb: records.facing_pb
       sorts: [records.count_percent desc]
       limit: 500
-      value_labels: legend
+      value_labels: none
       label_type: labPer
       stacking: ''
       show_value_labels: false
@@ -128,7 +128,7 @@
       left: 12
       top: 0
       height: 4
-      width: 6
+      width: 8
       fields: [records.facing_pb, records.count]
       pivots: [records.facing_pb]
       filters:
@@ -175,10 +175,10 @@
       model: bc_i6035_cvst_cfd_position
       explore: records
       type: looker_pie
-      left: 18
+      left: 20
       top: 0
       height: 4
-      width: 6
+      width: 4
       fields: [records.facing_pb, records.count_percent]
       filters:
         records.match_status: Unmatched
@@ -187,7 +187,7 @@
         facing_pb: records.facing_pb
       sorts: [records.facing_pb]
       limit: 500
-      value_labels: legend
+      value_labels: none
       label_type: labPer
       stacking: ''
       show_value_labels: false
