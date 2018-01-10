@@ -60,13 +60,13 @@
       series_types: {}
       series_colors:
         Matched - records.count: "#92c26e"
-        Unmatched - records.count: "#df5555"
+        Unmatched - records.count: "#646569"
       y_axes: [{label: '', maxValue: !!null '', minValue: !!null '', orientation: bottom,
           showLabels: false, showValues: true, tickDensity: default, tickDensityCustom: 5,
           type: linear, unpinAxis: false, valueFormat: !!null '', series: [{id: Matched,
               name: Matched, axisId: records.count}, {id: Unmatched, name: Unmatched,
               axisId: records.count}]}]
-      label_color: ["#000000"]
+      label_color: ["#FFFFFF"]
       font_size: '8'
 
     - name: records_matched
@@ -107,7 +107,7 @@
       totals_color: "#808080"
       series_types: {}
       series_colors:
-        Unmatched: "#df5555"
+        Unmatched: "#646569"
         Matched: "#92c26e"
 
     - name: unmatched_count
