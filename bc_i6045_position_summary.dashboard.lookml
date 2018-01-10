@@ -29,11 +29,11 @@
       top: 0
       height: 4
       width: 6
-      fields: [records.system, records.match_status, records.count]
+      fields: [records.facing_pb, records.match_status, records.count]
       pivots: [records.match_status]
       filters:
         records.match_status: Matched,Unmatched
-        records.system: "-Calypso"
+        records.system: "Calypso"
       listen:
         facing_pb: records.facing_pb
       sorts: [records.count desc 0, records.match_status]
@@ -86,7 +86,7 @@
       fields: [records.match_status, records.count_percent]
       filters:
         records.match_status: Matched,Unmatched
-        records.system: "-Calypso"
+        records.system: "Calypso"
       listen:
         facing_pb: records.facing_pb
       sorts: [records.count_percent desc]
@@ -129,14 +129,14 @@
       top: 0
       height: 4
       width: 6
-      fields: [records.system, records.count]
-      pivots: [records.system]
+      fields: [records.facing_pb, records.count]
+      pivots: [records.facing_pb]
       filters:
         records.match_status: Unmatched
-        records.system: "-Calypso"
+        records.system: "Calypso"
       listen:
         facing_pb: records.facing_pb
-      sorts: [records.count desc 0, records.system]
+      sorts: [records.count desc 0, records.facing_pb]
       limit: 500
       stacking: ''
       show_value_labels: false
@@ -179,13 +179,13 @@
       top: 0
       height: 4
       width: 6
-      fields: [records.system, records.count_percent]
+      fields: [records.facing_pb, records.count_percent]
       filters:
         records.match_status: Unmatched
-        records.system: "-Calypso"
+        records.system: "Calypso"
       listen:
         facing_pb: records.facing_pb
-      sorts: [records.system]
+      sorts: [records.facing_pb]
       limit: 500
       value_labels: legend
       label_type: labPer
