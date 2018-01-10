@@ -21,7 +21,7 @@
   elements:
 
     - name: matched_percentage
-      title: Matched Percentage
+      title: Matched
       model: bc_i6035_cvst_cfd_position
       explore: records
       type: looker_bar
@@ -75,7 +75,7 @@
       font_size: '8'
 
     - name: records_matched
-      title: Records Matched
+      title: Percentage
       model: bc_i6035_cvst_cfd_position
       explore: records
       type: looker_pie
@@ -121,7 +121,7 @@
         Matched: "#92c26e"
 
     - name: unmatched_count
-      title: Unmatched Count
+      title: Unmatched
       model: bc_i6035_cvst_cfd_position
       explore: records
       type: looker_bar
@@ -171,7 +171,7 @@
             {id: SG, name: SG, axisId: records.count}]}]
 
     - name: unmatched_percentage
-      title: Unmatched Percentage
+      title: Percentage
       model: bc_i6035_cvst_cfd_position
       explore: records
       type: looker_pie
