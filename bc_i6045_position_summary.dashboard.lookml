@@ -67,7 +67,49 @@
               name: Matched, axisId: records.count}, {id: Unmatched, name: Unmatched,
               axisId: records.count}]}]
       label_color: ["#000000"]
-      font_size: '10'
+      font_size: '8'
+
+    - name: records_matched
+      title: Records Matched
+      model: bc_i6035_cvst_cfd_position
+      explore: records
+      type: looker_pie
+      left: 6
+      top: 0
+      height: 4
+      width: 6
+      fields: [records.match_status, records.count_percent]
+      sorts: [records.count_percent desc]
+      limit: 500
+      value_labels: legend
+      label_type: labPer
+      stacking: ''
+      show_value_labels: false
+      label_density: 25
+      legend_position: center
+      x_axis_gridlines: false
+      y_axis_gridlines: true
+      show_view_names: true
+      limit_displayed_rows: false
+      y_axis_combined: true
+      show_y_axis_labels: true
+      show_y_axis_ticks: true
+      y_axis_tick_density: default
+      y_axis_tick_density_custom: 5
+      show_x_axis_label: true
+      show_x_axis_ticks: true
+      x_axis_scale: auto
+      y_axis_scale_mode: linear
+      ordering: none
+      show_null_labels: false
+      show_totals_labels: false
+      show_silhouette: false
+      totals_color: "#808080"
+      series_types: {}
+      series_colors:
+        Unmatched: "#df5555"
+        Matched: "#92c26e"
+
 
     - name: break_count_by_age_chart
       title: Break Count by Account by Age
