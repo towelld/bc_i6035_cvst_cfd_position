@@ -34,6 +34,8 @@
       filters:
         records.match_status: Matched,Unmatched
         records.system: "-Calypso"
+      listen:
+        facing_pb: records.facing_pb
       sorts: [records.count desc 0, records.match_status]
       limit: 500
       stacking: percent
@@ -85,6 +87,8 @@
       filters:
         records.match_status: Matched,Unmatched
         records.system: "-Calypso"
+      listen:
+        facing_pb: records.facing_pb
       sorts: [records.count_percent desc]
       limit: 500
       value_labels: legend
@@ -130,6 +134,8 @@
       filters:
         records.match_status: Unmatched
         records.system: "-Calypso"
+      listen:
+        facing_pb: records.facing_pb
       sorts: [records.count desc 0, records.system]
       limit: 500
       stacking: ''
@@ -177,6 +183,8 @@
       filters:
         records.match_status: Unmatched
         records.system: "-Calypso"
+      listen:
+        facing_pb: records.facing_pb
       sorts: [records.system]
       limit: 500
       value_labels: legend
