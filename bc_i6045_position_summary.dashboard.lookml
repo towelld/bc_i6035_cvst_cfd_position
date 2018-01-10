@@ -36,7 +36,7 @@
         records.system: "Calypso"
       listen:
         facing_pb: records.facing_pb
-      sorts: [records.count desc 0, records.match_status]
+      sorts: [records.match_status 0, records.facing_pb]
       limit: 500
       stacking: percent
       show_value_labels: false
