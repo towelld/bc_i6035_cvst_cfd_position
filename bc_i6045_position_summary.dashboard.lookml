@@ -19,13 +19,63 @@
     field: records.facing_pb
 
   elements:
+
+    - name: matched_percentage
+      title: Matched Percentage
+      model: bc_i6035_cvst_cfd_position
+      explore: records
+      type: looker_bar
+      left: 0
+      top: 0
+      height: 4
+      width: 6
+      fields: [records.system, records.match_status, records.count]
+      pivots: [records.match_status]
+      sorts: [records.count desc 0, records.match_status]
+      limit: 500
+      stacking: percent
+      show_value_labels: true
+      label_density: 25
+      legend_position: center
+      x_axis_gridlines: false
+      y_axis_gridlines: true
+      show_view_names: true
+      limit_displayed_rows: false
+      y_axis_combined: true
+      show_y_axis_labels: true
+      show_y_axis_ticks: true
+      y_axis_tick_density: default
+      y_axis_tick_density_custom: 5
+      show_x_axis_label: false
+      show_x_axis_ticks: true
+      x_axis_scale: auto
+      y_axis_scale_mode: linear
+      ordering: none
+      show_null_labels: false
+      show_totals_labels: false
+      show_silhouette: false
+      totals_color: "#808080"
+      value_labels: legend
+      label_type: labPer
+      series_types: {}
+      series_colors:
+        Matched - records.count: "#92c26e"
+        Unmatched - records.count: "#df5555"
+      y_axes: [{label: '', maxValue: !!null '', minValue: !!null '', orientation: bottom,
+          showLabels: false, showValues: true, tickDensity: default, tickDensityCustom: 5,
+          type: linear, unpinAxis: false, valueFormat: !!null '', series: [{id: Matched,
+              name: Matched, axisId: records.count}, {id: Unmatched, name: Unmatched,
+              axisId: records.count}]}]
+      label_color: ["#000000"]
+      font_size: '10'
+
     - name: break_count_by_age_chart
       title: Break Count by Account by Age
       model: bc_i6035_cvst_cfd_position
       explore: records
       type: looker_column
       left: 0
-      top: 0
+      top: 4
       height: 3
       width: 11
       fields: [records.count, records.system, records.age]
@@ -88,7 +138,7 @@
       explore: records
       type: table
       left: 0
-      top: 3
+      top: 7
       height: 6
       width: 11
       fields: [records.facing_pb, records.age, records.count]
@@ -126,7 +176,7 @@
       explore: records
       type: looker_column
       left: 12
-      top: 0
+      top: 4
       height: 3
       width: 11
       fields: [records.system, records.age, records.sum_settle_amt_usd]
@@ -194,7 +244,7 @@
       explore: records
       type: table
       left: 12
-      top: 3
+      top: 7
       height: 6
       width: 11
       fields: [records.facing_pb, records.age, records.sum_settle_amt_usd]
@@ -231,7 +281,7 @@
       explore: records
       type: table
       left: 0
-      top: 8
+      top: 12
       height: 6
       width: 23
       fields: [records.facing_pb, records.count, records.sum_settle_amt_usd, records.age]
@@ -280,7 +330,7 @@
       explore: match_jobs
       type: looker_column
       left: 0
-      top: 13
+      top: 17
       height: 4
       width: 7
       fields: [match_jobs.date_time_stamp_date, match_jobs.sum_matched]
@@ -324,7 +374,7 @@
       explore: user_audit
       type: looker_column
       left: 8
-      top: 13
+      top: 17
       height: 4
       width: 7
       fields: [user_session_audit.full_user_name, user_audit.date_time_stamp_date, user_audit.count]
@@ -381,7 +431,7 @@
       explore: match_jobs
       type: looker_area
       left: 16
-      top: 13
+      top: 17
       height: 4
       width: 7
       fields: [match_jobs.date_time_stamp_date, match_jobs.average_unmatched]
