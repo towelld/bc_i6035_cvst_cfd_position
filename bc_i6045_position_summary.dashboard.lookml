@@ -297,6 +297,7 @@
       sorts: [records.facing_pb, records.age]
       limit: 500
       total: true
+      row_total: right
       show_view_names: false
       show_row_numbers: false
       truncate_column_names: false
@@ -403,6 +404,7 @@
       sorts: [records.facing_pb, records.age]
       limit: 500
       total: true
+      row_total: right
       show_view_names: false
       show_row_numbers: false
       truncate_column_names: false
