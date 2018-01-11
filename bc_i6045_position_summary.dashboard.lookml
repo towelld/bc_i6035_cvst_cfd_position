@@ -479,7 +479,7 @@
       left: 0
       top: 17
       height: 4
-      width: 7
+      width: 9
       fields: [match_jobs.date_time_stamp_date, match_jobs.sum_matched]
       fill_fields: [match_jobs.date_time_stamp_date]
       filters:
@@ -520,10 +520,10 @@
       model: bc_i6035_cvst_cfd_position
       explore: user_audit
       type: looker_column
-      left: 8
+      left: 10
       top: 17
       height: 4
-      width: 7
+      width: 9
       fields: [user_session_audit.full_user_name, user_audit.date_time_stamp_date, user_audit.count]
       pivots: [user_session_audit.full_user_name]
       fill_fields: [user_audit.date_time_stamp_date]
@@ -577,10 +577,10 @@
       model: bc_i6035_cvst_cfd_position
       explore: match_jobs
       type: looker_area
-      left: 16
+      left: 20
       top: 17
       height: 4
-      width: 7
+      width: 9
       fields: [match_jobs.date_time_stamp_date, match_jobs.average_unmatched]
       filters:
         match_jobs.date_time_stamp_date: 7 days
