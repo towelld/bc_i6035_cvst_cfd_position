@@ -1,7 +1,7 @@
 - dashboard: i6045_position_summary
   title: Position Summary
   layout: static
-  width: 1632
+  width: 1972
   tile_size: 68
   embed_style:
     background_color: "#ffffff"
@@ -28,7 +28,7 @@
       left: 0
       top: 0
       height: 4
-      width: 8
+      width: 9
       fields: [records.facing_pb, records.match_status, records.count]
       pivots: [records.match_status]
       filters:
@@ -79,10 +79,10 @@
       model: bc_i6035_cvst_cfd_position
       explore: records
       type: looker_pie
-      left: 8
+      left: 9
       top: 0
       height: 4
-      width: 4
+      width: 5
       fields: [records.match_status, records.count_percent]
       filters:
         records.match_status: Matched,Unmatched
@@ -125,10 +125,10 @@
       model: bc_i6035_cvst_cfd_position
       explore: records
       type: looker_bar
-      left: 12
+      left: 15
       top: 0
       height: 4
-      width: 8
+      width: 9
       fields: [records.facing_pb, records.count]
       pivots: [records.facing_pb]
       filters:
@@ -175,10 +175,10 @@
       model: bc_i6035_cvst_cfd_position
       explore: records
       type: looker_pie
-      left: 20
+      left: 24
       top: 0
       height: 4
-      width: 4
+      width: 5
       fields: [records.facing_pb, records.count_percent]
       filters:
         records.match_status: Unmatched
@@ -222,7 +222,7 @@
       left: 0
       top: 4
       height: 3
-      width: 11
+      width: 14
       fields: [records.count, records.system, records.age]
       pivots: [records.age]
       fill_fields: [records.age]
@@ -285,7 +285,7 @@
       left: 0
       top: 7
       height: 6
-      width: 11
+      width: 14
       fields: [records.facing_pb, records.age, records.count]
       pivots: [records.age]
       fill_fields: [records.age]
@@ -321,10 +321,10 @@
       model: bc_i6035_cvst_cfd_position
       explore: records
       type: looker_column
-      left: 12
+      left: 15
       top: 4
       height: 3
-      width: 11
+      width: 14
       fields: [records.system, records.age, records.sum_settle_amt_usd]
       pivots: [records.age]
       fill_fields: [records.age]
@@ -389,10 +389,10 @@
       model: bc_i6035_cvst_cfd_position
       explore: records
       type: table
-      left: 12
+      left: 15
       top: 7
       height: 6
-      width: 11
+      width: 14
       fields: [records.facing_pb, records.age, records.sum_settle_amt_usd]
       pivots: [records.age]
       fill_fields: [records.age]
@@ -430,7 +430,7 @@
       left: 0
       top: 12
       height: 6
-      width: 23
+      width: 29
       fields: [records.facing_pb, records.count, records.sum_settle_amt_usd, records.age]
       pivots: [records.age]
       fill_fields: [records.age]
