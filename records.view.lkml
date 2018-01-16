@@ -233,6 +233,7 @@ view: records {
 
   measure: count {
     type: count
+    value_format: "#,##0"
     drill_fields: [position_record*]
   }
 
@@ -245,7 +246,7 @@ view: records {
   measure: sum_quantity {
     type: sum
     sql: ${quantity};;
-    value_format: "#,##0.00"
+    value_format: "#,##0"
     drill_fields: [position_record*]
   }
 
